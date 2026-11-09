@@ -18,7 +18,6 @@ Data/sfLogin_SS.json
 .env.*
 *.env
 !.env.example
-Data/sfCredentials_Api.json
 **/*credentials*.json
 
 # Logs

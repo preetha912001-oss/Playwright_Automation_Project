@@ -1,13 +1,14 @@
 import {test, expect} from '@playwright/test';
-import credentials from '../../Data/sfCredentials_Api.json';
+import  dotenv from 'dotenv'
+dotenv.config({path:'Data/prod.env'})
 let accessToken:any;
 let tokenType:any;
 let instanceUrl:any;
 let leadId:any;
 let headers_crud: any;
-const tokenUrl = credentials.tokenUrl;
-const clientId = credentials.clientId;
-const clientSecret = credentials.clientSecret;
+const tokenUrl = process.env.SF_TOKEN_URL!;
+const clientId = process.env.SF_CLIENT_ID!;
+const clientSecret = process.env.SF_CLIENT_SECRET!;
 test('Salesforce API testing with Playwright', async ({page,request}) => {
     // Serialization ->converting object into json
     // Generate OAuth access token using POST request

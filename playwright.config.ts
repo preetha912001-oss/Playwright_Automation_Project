@@ -17,7 +17,6 @@ export default defineConfig({
   testIgnore: process.env.CI
   ? [
       '**/sfLogin_SS.spec.ts',
-      '**/SF_PW_API.spec.ts'
     ]
   : [],
   timeout: 40000,

@@ -1,6 +1,5 @@
 import { Wrapper } from "../helper/pwWrapper";
 import { selectors } from '../Pages/locator_file';
-import { expect } from "@playwright/test";
 export class SfHome extends Wrapper{
     async viewAppLauncher(){
         // Click the App Launcher
