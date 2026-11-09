@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Playwright reports and test results
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Authentication and storage state
+/playwright/.auth/
+Data/dpSflogin.json
+Data/sfLogin_SS.json
+
+# Credentials and secrets
+.env
+.env.*
+*.env
+Data/sfCredentials_Api.json
