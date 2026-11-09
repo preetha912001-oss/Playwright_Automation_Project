@@ -41,7 +41,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'on',
     video:'on',
-    headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
