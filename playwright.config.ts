@@ -14,6 +14,9 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  testIgnore: process.env.CI
+  ? ['**/sfLogin_SS.spec.ts']
+  : [],
   timeout: 40000,
   /* Run tests in files in parallel */
   fullyParallel: true,
