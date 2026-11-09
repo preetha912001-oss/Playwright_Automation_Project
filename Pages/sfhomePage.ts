@@ -7,7 +7,12 @@ export class SfHome extends Wrapper{
         // Click View All Applications
         await this.clickAction(this.page.locator(selectors(this.page).homePage.clickViewAll))
         // Search for Leads application
-        await this.clearAndFill(selectors(this.page).homePage.searchLead,'Leads')
-        await this.clickAction(this.page.locator(selectors(this.page).homePage.clickLead))
+        // Search for Leads application
+        await this.clearAndFill(selectors(this.page).homePage.searchLead, 'Leads')
+        // Wait until Leads search result appears
+        const leadsApp = this.page.locator(selectors(this.page).homePage.clickLead)
+        await leadsApp.waitFor({ state: 'visible', timeout: 15000 })
+        // Click Leads
+        await this.clickAction(leadsApp)
     }
 }
