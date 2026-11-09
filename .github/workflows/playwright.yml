@@ -12,6 +12,8 @@ jobs:
       SF_TOKEN_URL: ${{ secrets.SF_TOKEN_URL }}
       SF_CLIENT_ID: ${{ secrets.SF_CLIENT_ID }}
       SF_CLIENT_SECRET: ${{ secrets.SF_CLIENT_SECRET }}
+      PROD_URL: ${{ secrets.PROD_URL }}
+      SF_STORAGE_STATE: ${{ secrets.SF_STORAGE_STATE }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -21,6 +23,10 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Create Salesforce session file
+      run: | 
+        mkdir -p Data
+        printf '%s' "$SF_STORAGE_STATE" > Data/sfLogin_SS.json
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4

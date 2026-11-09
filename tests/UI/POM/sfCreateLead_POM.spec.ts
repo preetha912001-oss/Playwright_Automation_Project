@@ -9,7 +9,7 @@ test('Lead Creation in Salesforce using POM',async({
     homeFix,
     leadFix
     })=>{
-    await loginFix.loadSfUrl(process.env.prod_url as string)
+    await loginFix.loadSfUrl(process.env.PROD_URL as string)
     await homeFix.viewAppLauncher()
     await leadFix.clickNew()
     let fName = await leadFix.newLead()
